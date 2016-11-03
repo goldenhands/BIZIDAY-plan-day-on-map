@@ -1,0 +1,252 @@
+$mainColor: #441151;
+$textColor: #ff958c;
+$stripesColor: #883677;
+$resultColor: #ee85b5;
+
+body {
+    font-family: "Myriad Pro", Sans-serif;
+    font-weight: bold;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar {
+    background: $mainColor;
+    width: 25%;
+    height: 90vh;
+    color: $textColor;
+    -webkit-box-shadow: inset 2px 2px 5px -1px rgba(0,0,0,0.16);
+    -moz-box-shadow: inset 2px 2px 5px -1px rgba(0,0,0,0.16);
+    box-shadow: inset 2px 2px 5px -1px rgba(0,0,0,0.16);
+
+    hr {
+        border-color: $stripesColor;
+    }
+
+    .header {
+        display: flex;
+
+        .logo {
+            background: url('../images/logo.png');
+            background-size: 73px 87px;
+            background-repeat: no-repeat;
+            width: 73px;
+            height: 87px;
+            margin-top: 7px;
+        }
+
+        .slogan {
+            font-size: 14px;
+            margin-top: 28px;
+            padding: 12px;
+        }
+    }
+
+    .start {
+        margin-top: 14px;
+    }
+
+    form {
+        margin: 0 auto;
+        width: 100%;
+
+        input[type=text] {
+            width: 248px;
+            height: 21px;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+            background-color: $mainColor;
+            color: $textColor;
+            -webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.09);
+            -moz-box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.09);
+            box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.09);
+            border: solid 1px $textColor;
+            margin-left: -47px;
+            margin-top: 14px;
+            padding-left: 10px;
+        }
+
+        .inputField {
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+            height: 41px;
+        }
+
+        .home {
+            background: url('../images/icon-home.png');
+            background-size: 20px 28px;
+            background-repeat: no-repeat;
+            width: 73px;
+            height: 87px;
+            margin-left: 5px;
+            margin-top: 11px;
+        }
+
+        .minus {
+            background-size: 20px 28px;
+            background-repeat: no-repeat;
+            width: 73px;
+            height: 87px;
+            font-size: 26px;
+            margin-left: 5px;
+            margin-top: 11px;
+        }
+
+        .plus {
+            margin-top: 13px;
+            margin-left: 3px;
+            font-size: 26px;
+        }
+
+        i {
+            &:hover {
+                color: blue;
+            }
+        }
+
+        .buttonCalculateRoute {
+            background: url("../images/button.png");
+            background-size: 256px;
+            background-repeat: no-repeat;
+            width: 256px;
+            height: 49px;
+            margin: 0 auto 0 10%;
+
+            &:hover {
+                background-color: $textColor;
+            }
+        }
+    }
+
+    .results {
+        width: 256px;
+        height: 26px;
+        margin: 8px auto 0 10%;
+        font-size: 10px;
+        color: $resultColor;
+
+        .distance,
+        .time {
+            float: right;
+            display: inline-block;
+        }
+    }
+
+    .route {
+        color: $resultColor;
+        width: 256px;
+        font-size: 13px;
+        margin: 8px auto 0 10%;
+        text-transform: uppercase;
+
+        ol {
+            list-style: inside;
+            list-style-type: inherit;
+        }
+    }
+}
+
+.mapContainer {
+    background: yellow;
+    width: 75%;
+
+    #map {
+        height: 90vh;
+    }
+}
+
+.popupBackground {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.popupWindow {
+    position: fixed;
+    margin: 0 auto;
+    left: 25%;
+    right: 25%;
+    bottom: 25%;
+    top: 25%;
+    width: 500px;
+    height: 400px;
+    color: white;
+    background: url("../images/popup.png");
+    background-size: 500px 400px;
+    background-repeat: no-repeat;
+
+    .popupText {
+        position: absolute;
+        width: 330px;
+        top: 120px;
+
+        .logo {
+            background: url('../images/logo-popup.png');
+            background-size: 73px 87px;
+            background-repeat: no-repeat;
+            width: 73px;
+            height: 87px;
+            margin-top: 7px;
+
+            p {
+                position: absolute;
+                left: 91px;
+                color: $textColor;
+                font-size: 102px;
+            }
+        }
+        hr {
+            border-color: $textColor;
+        }
+        .slogan {
+            font-size: 14px;
+            margin-top: 28px;
+            padding: 12px;
+            color: $mainColor;
+        }
+        padding: 14px;
+
+        ul {
+            text-align: center;
+        }
+    }
+
+    button {
+        float: right;
+        background-color: #9966cc;
+        /* Green */
+        border: none;
+        color: white;
+        padding: 7px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 9px;
+    }
+}
+
+.stripe {
+    background: $stripesColor;
+    font-size: 13px;
+    padding: 6px;
+}
+
+.arrow {
+    float: right;
+    font-size: 14px;
+    margin-right: 7px;
+}
+
+footer {
+    width: 100%;
+    height: 10vh;
+    background: $mainColor;
+}

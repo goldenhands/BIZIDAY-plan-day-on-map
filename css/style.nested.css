@@ -1,0 +1,186 @@
+body {
+  font-family: "Myriad Pro", Sans-serif;
+  font-weight: bold; }
+
+.main {
+  display: flex;
+  flex-direction: row; }
+
+.sidebar {
+  background: #441151;
+  width: 25%;
+  height: 90vh;
+  color: #ff958c;
+  -webkit-box-shadow: inset 2px 2px 5px -1px rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: inset 2px 2px 5px -1px rgba(0, 0, 0, 0.16);
+  box-shadow: inset 2px 2px 5px -1px rgba(0, 0, 0, 0.16); }
+  .sidebar hr {
+    border-color: #883677; }
+  .sidebar .header {
+    display: flex; }
+    .sidebar .header .logo {
+      background: url("../images/logo.png");
+      background-size: 73px 87px;
+      background-repeat: no-repeat;
+      width: 73px;
+      height: 87px;
+      margin-top: 7px; }
+    .sidebar .header .slogan {
+      font-size: 14px;
+      margin-top: 28px;
+      padding: 12px; }
+  .sidebar .start {
+    margin-top: 14px; }
+  .sidebar form {
+    margin: 0 auto;
+    width: 100%; }
+    .sidebar form input[type=text] {
+      width: 248px;
+      height: 21px;
+      -webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
+      border-radius: 15px;
+      background-color: #441151;
+      color: #ff958c;
+      -webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.09);
+      -moz-box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.09);
+      box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.09);
+      border: solid 1px #ff958c;
+      margin-left: -47px;
+      margin-top: 14px;
+      padding-left: 10px; }
+    .sidebar form .inputField {
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+      height: 41px; }
+    .sidebar form .home {
+      background: url("../images/icon-home.png");
+      background-size: 20px 28px;
+      background-repeat: no-repeat;
+      width: 73px;
+      height: 87px;
+      margin-left: 5px;
+      margin-top: 11px; }
+    .sidebar form .minus {
+      background-size: 20px 28px;
+      background-repeat: no-repeat;
+      width: 73px;
+      height: 87px;
+      font-size: 26px;
+      margin-left: 5px;
+      margin-top: 11px; }
+    .sidebar form .plus {
+      margin-top: 13px;
+      margin-left: 3px;
+      font-size: 26px; }
+    .sidebar form i:hover {
+      color: blue; }
+    .sidebar form .buttonCalculateRoute {
+      background: url("../images/button.png");
+      background-size: 256px;
+      background-repeat: no-repeat;
+      width: 256px;
+      height: 49px;
+      margin: 0 auto 0 10%; }
+      .sidebar form .buttonCalculateRoute:hover {
+        background-color: #ff958c; }
+  .sidebar .results {
+    width: 256px;
+    height: 26px;
+    margin: 8px auto 0 10%;
+    font-size: 10px;
+    color: #ee85b5; }
+    .sidebar .results .distance,
+    .sidebar .results .time {
+      float: right;
+      display: inline-block; }
+  .sidebar .route {
+    color: #ee85b5;
+    width: 256px;
+    font-size: 13px;
+    margin: 8px auto 0 10%;
+    text-transform: uppercase; }
+    .sidebar .route ol {
+      list-style: inside;
+      list-style-type: inherit; }
+
+.mapContainer {
+  background: yellow;
+  width: 75%; }
+  .mapContainer #map {
+    height: 90vh; }
+
+.popupBackground {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6); }
+
+.popupWindow {
+  position: fixed;
+  margin: 0 auto;
+  left: 25%;
+  right: 25%;
+  bottom: 25%;
+  top: 25%;
+  width: 500px;
+  height: 400px;
+  color: white;
+  background: url("../images/popup.png");
+  background-size: 500px 400px;
+  background-repeat: no-repeat; }
+  .popupWindow .popupText {
+    position: absolute;
+    width: 330px;
+    top: 120px;
+    padding: 14px; }
+    .popupWindow .popupText .logo {
+      background: url("../images/logo-popup.png");
+      background-size: 73px 87px;
+      background-repeat: no-repeat;
+      width: 73px;
+      height: 87px;
+      margin-top: 7px; }
+      .popupWindow .popupText .logo p {
+        position: absolute;
+        left: 91px;
+        color: #ff958c;
+        font-size: 102px; }
+    .popupWindow .popupText hr {
+      border-color: #ff958c; }
+    .popupWindow .popupText .slogan {
+      font-size: 14px;
+      margin-top: 28px;
+      padding: 12px;
+      color: #441151; }
+    .popupWindow .popupText ul {
+      text-align: center; }
+  .popupWindow button {
+    float: right;
+    background-color: #9966cc;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 9px; }
+
+.stripe {
+  background: #883677;
+  font-size: 13px;
+  padding: 6px; }
+
+.arrow {
+  float: right;
+  font-size: 14px;
+  margin-right: 7px; }
+
+footer {
+  width: 100%;
+  height: 10vh;
+  background: #441151; }

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>BIZIDAY - Zaplanuj swój dzień na mapie!</title>
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/style.nested.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/2b8eab0cbd.js"></script>
+</head>
+
+<body>
+    <section class='main'>
+        <div class="sidebar">
+            <div class="header">
+                <div class="logo"></div>
+                <div class="slogan">
+                    ZAPLANUJ NAJKRÓTSZĄ TRASĘ <br> Z DOMU DO DOMU
+                </div>
+            </div>
+            <div class="stripe start">
+                START Z
+                <div class="icon arrow">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                </div>
+            </div>
+            <form action="index.html" method="post">
+                <div class="inputField">
+                    <div class="icon home">
+                    </div>
+                    <input type="text" name="place1" id="place1" placeholder="Dom" required/>
+                </div>
+                <hr>
+                <div class="stripe">
+                    DODAJ DODATKOWE CELE
+                    <div class="icon arrow">
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="inputField">
+                    <div class="icon minus">
+                        <i class="icon fa fa-minus-circle" aria-hidden="true"></i>
+                    </div>
+                    <input type="text" name="place2" id="place2" placeholder="Pierwsze miejsce" required/>
+                </div>
+                <div class="inputField">
+                    <div class="icon minus">
+                        <i class="icon fa fa-minus-circle" aria-hidden="true"></i>
+                    </div>
+                    <input type="text" name="place3" id="place3" placeholder="Drugie miejsce" required/>
+                    <div class="icon plus">
+                        <i class="icon fa fa-plus-circle" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <hr>
+                <div class="buttonCalculateRoute">
+                </div>
+            </form>
+            <div class="results">
+                CAŁKOWITA ODLEGŁOŚĆ
+                <div class="distance">
+                  0 KM
+                </div>
+                CAŁKOWITY CZAS PODRÓŻY
+                <div class="time">
+                    2H 49MIN
+                </div>
+            </div>
+            <hr>
+            <div class="stripe">
+                SUGEROWANY PLAN PODRÓŻY
+                <div class="icon arrow">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="route">
+                <ol>
+                  <li>
+                      Piersze miasto
+                  </li>
+                  <li>
+                      Drugie miasto
+                  </li>
+                  <li>
+                      Trzecie miasto
+                  </li>
+                </ol>
+            </div>
+        </div>
+        <div class="mapContainer">
+            <div id="map"></div>
+        </div>
+    </section>
+    <footer>
+        <div class="popupBackground">
+        </div>
+        <div class="popupWindow">
+            <button type="button" name="closePopup">X</button>
+            <div class="popupText">
+                <div class="logo">
+                    <p>
+                        1.0
+                    </p>
+                </div>
+                <div class="slogan">
+                    ZAPLANUJ SWÓJ DZIEŃ NA MAPIE
+                    <hr>
+                    Masz urwanie głowy? <br>Dużo spraw do załatwienia na mieście? <br>Nie wiesz jak się ze wszystkim wyrobić? <br><br><h3>BIZIDAY to Twoja aplikacja do planowania wszystki wizyt na mieście.</h3>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbOouIr8fi1KLhmgfq-qkHmRKH5FsILWY&libraries=places&callback=initMap" async defer></script>
+</body>
+
+</html>

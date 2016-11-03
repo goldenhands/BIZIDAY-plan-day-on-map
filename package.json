@@ -1,0 +1,24 @@
+{
+  "name": "goldenhands",
+  "version": "1.0.0",
+  "description": "## Jak rozwiązywać zadania?",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodersLab/KRA_FRO_S_06_Wordpress.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodersLab/KRA_FRO_S_06_Wordpress/issues"
+  },
+  "homepage": "https://github.com/CodersLab/KRA_FRO_S_06_Wordpress#readme",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {},
+  "keywords": []
+}

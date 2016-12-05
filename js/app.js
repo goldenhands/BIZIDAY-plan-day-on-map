@@ -12,7 +12,7 @@ function closePopup() {
     btn.one('click', function() {
         btn.parent().prev().hide();
         btn.parent().hide();
-        btn.hide();
+        btn.hide(); //Nie musisz ręcznie wszystkich dzieci chować - ukryj btn.parent i wystarczy :)
     });
 }
 closePopup();
@@ -21,10 +21,9 @@ closePopup();
 function addOrDeleteInput() {
     var form = $('form');
     var i = $('form div.inputField').size() + 1;
-    $('form').on('click', '.plus', function() {
+    $('form').on('click', '.plus', function() { // masz zmienna to z niej korzystaj 'form'
 
-        var newInput = $('<div class="inputField"><div class="icon minus"><i class="icon fa fa-minus-circle" aria-hidden="true"></i></div><input type="text" name="place' + i + '"" id="place' + i + '" placeholder="Następne miejsce" required/><div class="icon plus"><i class="icon fa fa-plus-circle" aria-hidden="true"></i></div></div>');
-
+        var newInput = $('<div class="inputField"><div class="icon minus"><i class="icon fa fa-minus-circle" aria-hidden="true"></i></div><input type="text" name="place' + i + '"" id="place' + i + '" placeholder="Następne miejsce" required/><div class="icon plus"><i class="icon fa fa-plus-circle" aria-hidden="true"></i></div></div>'); //Nie czytelne - twórz pojedyncze dzieci i je appenduj - tak nie widać co Ty tam masz/chcesz zrobić
 
         form.children('.inputField').last().after(newInput);
         i++;
@@ -34,16 +33,15 @@ function addOrDeleteInput() {
         return false;
     });
 
-    $('form').on('click', '.minus', function() {
+    $('form').on('click', '.minus', function() { //Zmienna form, PS możesz mieć dwie metody ON z jednego form'a
         if (i > 3) {
             $(this).parents('.inputField').remove();
             i--;
         }
         return false;
     });
-};
+} // bez śrenika - średnik tylko przy niejawnych
 addOrDeleteInput();
-
 
 //Initialize google maps on page
 function initMap() {
@@ -57,7 +55,7 @@ function initMap() {
 
 //Setting map on page. Start position and zoom
 function setStartMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map'), { // żeby było WOW możesz ustawić na pierwszą lokalizację - dane z geolokalizacji google - zaznaczenie domu albo przynajmniej kraju bo teraz jest sydney :)
         center: {
             lat: -34.397,
             lng: 150.644
@@ -68,11 +66,11 @@ function setStartMap() {
 
 function callback() {
     var input = this;
-    console.log(this);
+    console.log(this); //kosz
     var autocomplete = new google.maps.places.Autocomplete(input);
     completes.push(autocomplete);
 
-    console.log('działa');
+    console.log('działa'); //kosz
     var infowindow = new google.maps.InfoWindow();
 
     // Event for changing places
@@ -108,7 +106,7 @@ function callback() {
             var address = '';
             if (place.address_components) {
                 address = [
-                    (place.address_components[0] && place.address_components[0].short_name || ''),
+                    (place.address_components[0] && place.address_components[0].short_name || '') // jak nie ma to kosz - nawiasy nie potrzebne
                     // (place.address_components[1] && place.address_components[2].short_name || ''),
                     // (place.address_components[2] && place.address_components[2].short_name || '') // You can uncomment if you want more values
                 ].join(' ');
@@ -137,7 +135,7 @@ function setMapOnAll() {
 
 //This function iniciate route drawing. If you want to use put in your function with var map.
 function drawRoute(map) {
-    console.log('drawRoute działa');
+    console.log('drawRoute działa'); //kosz
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;
     directionsDisplay.setMap(map);
@@ -150,7 +148,7 @@ function drawRoute(map) {
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     setMapOnAll(map);
     var waypts = [];
-    var inputArray = document.querySelectorAll('input');
+    var inputArray = document.querySelectorAll('input'); //jQuery czy czysty js?
     for (var i = 1; i < inputArray.length; i++) {
         if (inputArray[i].value != '') {
             waypts.push({
@@ -161,8 +159,8 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     }
 
     directionsService.route({
-        origin: document.querySelector('#place1').value,
-        destination: document.querySelector('#place1').value,
+        origin: document.querySelector('#place1').value, //jQuery czy czysty js?
+        destination: document.querySelector('#place1').value, //jQuery czy czysty js?
         waypoints: waypts,
         optimizeWaypoints: true,
         travelMode: 'DRIVING'
@@ -197,7 +195,6 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         }
     });
 }
-
 
 function displayDuration(totalDuration, timeDiv) {
     var hours = Math.floor(totalDuration / 3600);
